@@ -4,43 +4,53 @@ document.getElementById('blog').addEventListener('click', function () {
 })
 
 // donation and history functionality
-let donationActive = true;
-function changeDonationHistoryStyle(num) {
-    if (num === 1) { // when donation button is clicked
-        // currently donation is clicked
-        document.getElementById("donation").classList.remove("bg-white");
-        document.getElementById("donation").classList.add("bg-btn-color");
-        // currently de-active button style
-        document.getElementById("history").classList.remove("bg-btn-color");
-        document.getElementById("history").classList.add("bg-white");
+let donationActive = true; // true means donation is now active button, false means history in now active btn
+function changeDonationHistoryStyle(str1, str2) {
+    // currently clicked button 
+    document.getElementById(str1).classList.remove("bg-white");
+    document.getElementById(str1).classList.add("bg-btn-color");
+    // currently non-clicked button 
+    document.getElementById(str2).classList.remove("bg-btn-color");
+    document.getElementById(str2).classList.add("bg-white");
+   
+    let donationSection = document.getElementById("donation-section");
+    let historySection = document.getElementById("history-section");
+     // now active btn
+     console.log('hi');
+    if (str1 === "donation") {
+        console.log('see donation');
         donationActive = true;
+        donationSection.classList.remove("hidden");
+        donationSection.classList.add("flex");
+        historySection.classList.remove('flex');
+        historySection.classList.add('hidden');
+        // donationSection.classList.add("hidden bg-green-400");
+        // donationSection.classList.remove("flex");
     }
     else {
-             // currently history is clicked
-             document.getElementById("history").classList.remove("bg-white");
-             document.getElementById("history").classList.add("bg-btn-color");
-             // currently de-active button style
-             document.getElementById("donation").classList.remove("bg-btn-color");
-             document.getElementById("donation").classList.add("bg-white");
-             donationActive = false;
+        console.log('see history');
+        donationActive = false;
+        historySection.classList.remove("hidden");
+        historySection.classList.add("flex");
+        donationSection.classList.remove('flex');
+        donationSection.classList.add('hidden');
+        // historySection.classList.add("hidden bg-green-400");
+        // historySection.classList.remove("flex");
     }
 }
 function donationHistoryToggle(e) {
-
     if (e.target === document.getElementById("donation")) { // when donation button clicked
         console.log('donation');
         if (!donationActive) { // history button is the last active button
-            changeDonationHistoryStyle(1);
+            changeDonationHistoryStyle("donation", "history"); // clicked,non-click id
         }
     }
-    else
-    {
+    else {
         console.log('history');
-        if(donationActive)
-        {
-            changeDonationHistoryStyle(2);
+        if (donationActive) {
+            changeDonationHistoryStyle("history", "donation");
         }
-    } 
+    }
 }
 document.getElementById("donation").addEventListener('click', function (e) {
     donationHistoryToggle(e);
