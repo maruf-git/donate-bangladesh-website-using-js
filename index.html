@@ -19,6 +19,9 @@
                 extend: {
                     colors: {
                         clifford: '#da373d',
+                        'btn-color': '#B4F461', //green
+                        'donate-primary': '#111111', //dark
+                        'donate-secondary': 'rgba(17, 17, 17, 0.7)', //light-dark .7
                     },
                     fontFamily: {
                         'lexend': ["Lexend", 'sans-serif'],
@@ -32,7 +35,33 @@
 
 <body class="font-lexend">
 
-    
+    <header id="header" class="bg-[rgb(249,247,243)]  text-donate-primary">
+        <!-- navar section starts here  -->
+        <section class="navbar bg-base-100 max-w-screen-xl m-auto bg-[rgb(249,247,243)] pb-14">
+            <div class="navbar-start ">
+                <!-- <button class="btn px-12  btn-xs sm:btn-sm md:btn-md lg:btn-lg">Blog</button> -->
+                <button class="btn text-2xl font-bold bg-btn-color">Blog</button>
+            </div>
+            <div class="navbar-center flex justify-center items-center gap-3">
+                <img src="assets/logo.png" alt="">
+                <h1 class="text-2xl font-semibold">Donate Bangladesh</h1>
+            </div>
+            <div class="navbar-end flex  items-center gap-3">
+                <img src="assets/coin.png" alt="">
+                <h1 class="text-2xl font-semibold  text-donate-secondary"><span id="balance">5500</span> BDT</h1>
+            </div>
+        </section>
+        <!-- navar section ends here  -->
+        <!-- banner section starts here -->
+        <section id="banner" class="flex justify-center items-center bg-white pt-8">
+            <div class="btn-container space-x-4">
+                <button class="btn text-2xl font-bold ">Donation</button>
+                <button class="btn text-2xl font-bold ">History</button>
+            </div>
+        </section>
+        <!-- banner section ends here -->
+    </header>
+
 
 
 </body>
