@@ -89,8 +89,10 @@
                     </div>
                     <!-- card-info-container -->
                     <div>
-                        <h1 class="font-semibold text-xl mb-3 text-donate-primary text-center lg:text-start">Donate <span class="donated-to">for
-                            Flood at Noakhali, Bangladesh</span></h1>
+                        <h1 class="font-semibold text-xl mb-3 text-donate-primary text-center lg:text-start">Donate
+                            <span class="donated-to">for
+                                Flood at Noakhali, Bangladesh</span>
+                        </h1>
                         <p class="font-light text-base mb-6 text-donate-secondary">
                             The recent floods in Noakhali have caused significant damage to homes infrastructure. Your
                             donation will help provide essential supplies and to those affected by this disaster. Every
@@ -128,8 +130,10 @@
                     </div>
                     <!-- card-info-container -->
                     <div>
-                        <h1 class="font-semibold text-xl mb-3 text-donate-primary text-center lg:text-start">Donate <span class="donated-to">for
-                            Flood at Feni, Bangladesh</span></h1>
+                        <h1 class="font-semibold text-xl mb-3 text-donate-primary text-center lg:text-start">Donate
+                            <span class="donated-to">for
+                                Flood at Feni, Bangladesh</span>
+                        </h1>
                         <p class="font-light text-base mb-6 text-donate-secondary">
                             The recent floods in Noakhali have caused significant damage to homes infrastructure. Your
                             donation will help provide essential supplies and to those affected by this disaster. Every
@@ -167,8 +171,10 @@
                     </div>
                     <!-- card-info-container -->
                     <div>
-                        <h1 class="font-semibold text-xl mb-3 text-donate-primary text-center lg:text-start">Donate <span class="donated-to">for
-                            Quota Reformation Protest at Dhaka, Bangladesh</span></h1>
+                        <h1 class="font-semibold text-xl mb-3 text-donate-primary text-center lg:text-start">Donate
+                            <span class="donated-to">for
+                                Quota Reformation Protest at Dhaka, Bangladesh</span>
+                        </h1>
                         <p class="font-light text-base mb-6 text-donate-secondary">
                             The recent floods in Noakhali have caused significant damage to homes infrastructure. Your
                             donation will help provide essential supplies and to those affected by this disaster. Every
@@ -192,10 +198,28 @@
 
         <!-- history Section starts here -->
         <section id="history-section" class="max-w-screen-xl mx-auto my-10 px-2 hidden">
-            <!-- history-cards -->
-            
+            <!-- history-cards here -->
+
         </section>
         <!-- history Section ends here -->
+
+        <!-- modal dialog starts here -->
+        <!-- <button class="btn donate-btn" onclick=" isDonationSuccessful()">open modal</button> -->
+        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box flex flex-col items-center">
+                <h1 class="font-bold mb-3 text-2xl sm:text-3xl lg:text-4xl ">Congrats!</h1>
+                <img src="assets/coin.png" alt="">
+                <p class="pt-4 pb-1 md:pt-6 text-center">You Have Donated for Humankind</p>
+                <h3 class="font-bold text-base sm:text-xl lg:text-2xl">Successfully</h3>
+                <div class="modal-action">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn hover:bg-btn-color">Close Confirmation</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+        <!-- modal dialog ends here -->
     </main>
 
     <!-- main section ends here -->
