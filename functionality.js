@@ -84,16 +84,29 @@ for (let i = 0; i < donationCards.length; i++) {
 // donation and history toggle functionality
 let donationActive = true; // true means donation is now active button, false means history in now active btn
 function changeDonationHistoryStyle(str1, str2) {
-    // currently clicked button 
+    // // currently clicked button 
     document.getElementById(str1).classList.remove("bg-white");
     document.getElementById(str1).classList.add("bg-btn-color");
+    
     // hover issue
-    document.getElementById(str1).addEventListener("mouseover", function () {
-        document.getElementById(str1).classList.add("bg-btn-color");
-    })
+    // document.getElementById(str2).addEventListener("mouseover", function () {
+    //     document.getElementById(str1).classList.add("bg-btn-color");
+    //     console.log("brooooooo");
+    // })
+    // document.getElementById(str1).addEventListener("mouseout", function () {
+    //     document.getElementById(str1).classList.add("bg-red-400");
+    //     console.log("brooooooo");
+    // })
+    // document.getElementById(str1).addEventListener("mouseout", function () {
+    //     document.getElementById(str1).classList.add("bg-red-400");
+    //     console.log("brooooooo");
+    // })
+    
+
     // currently non-clicked button 
     document.getElementById(str2).classList.remove("bg-btn-color");
     document.getElementById(str2).classList.add("bg-white");
+   
 
     let donationSection = document.getElementById("donation-section");
     let historySection = document.getElementById("history-section");

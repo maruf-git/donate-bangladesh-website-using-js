@@ -35,31 +35,36 @@
 
 <body class="font-lexend">
     <!-- header section starts here -->
-    <header id="header" class="bg-[rgb(249,247,243)]  text-donate-primary text-xl sticky top-0  border-b ">
+    <!-- FDD835 -->
+    <!-- background: rgb(249, 247, 243); -->
+    <!-- bg-[rgba(255,216,53,.8)] -->
+    <header id="header" class="  text-donate-primary text-xl sticky top-0  backdrop-blur-lg">
         <!-- navar section starts here  -->
-        <section
-            class="flex flex-col justify-center  items-center gap-3 md:flex-row  md:justify-between max-w-screen-xl m-auto  pt-4 pb-12 ">
-            <div class=" ">
-                <!-- <button class="btn px-12  btn-xs sm:btn-sm md:btn-md lg:btn-lg">Blog</button> -->
-                <button id="blog" class="btn text-xl font-semibold bg-btn-color">Blog</button>
-            </div>
-            <div class=" flex justify-center items-center gap-3">
-                <img src="assets/logo.png" alt="">
-                <h1 class="font-semibold">Donate Bangladesh</h1>
-            </div>
-            <div class=" flex  items-center gap-3">
-                <img src="assets/coin.png" alt="">
-                <h1 class="font-semibold  text-donate-secondary"><span id="balance">5500</span> BDT</h1>
-            </div>
+        <section class="bg-[rgba(255,216,53,.7)] ">
+            <section
+                class="flex flex-col justify-center  items-center lg:gap-3 md:flex-row  md:justify-between max-w-screen-xl m-auto  pt-4 pb-5 sm:pb-8 ">
+                <div class=" ">
+                    <!-- <button class="btn px-12  btn-xs sm:btn-sm md:btn-md lg:btn-lg">Blog</button> -->
+                    <button id="blog" class="btn text-xl font-semibold bg-btn-color">Blog</button>
+                </div>
+                <div class=" flex justify-center items-center gap-3">
+                    <img src="assets/logo.png" alt="">
+                    <h1 class="font-semibold">Donate Bangladesh</h1>
+                </div>
+                <div class=" flex  items-center gap-3">
+                    <img src="assets/coin.png" alt="">
+                    <h1 class="font-semibold  text-donate-secondary"><span id="balance">5500</span> BDT</h1>
+                </div>
+            </section>
         </section>
         <!-- navar section ends here  -->
 
         <!-- banner section starts here -->
-        <section id="banner" class="flex justify-center items-center bg-white pt-8 pb-6 ">
+        <section id="banner" class="text-donate-primary flex justify-center items-center bg-[rgba(255,255,255,.7)] p-3 sm:pt-6 sm:pb-6">
             <!-- donation and history buttons -->
             <div class="btn-container space-x-4">
-                <button id="donation" class="btn text-xl font-semibold bg-btn-color">Donation</button>
-                <button id="history" class="btn text-xl font-semibold bg-white">History</button>
+                <button id="donation" class="btn text-xl font-semibold bg-btn-color ">Donation</button>
+                <button id="history" class="btn text-xl font-semibold bg-white ">History</button>
             </div>
         </section>
         <!-- banner section ends here -->
@@ -68,6 +73,7 @@
 
     <!-- main section starts here -->
     <main>
+
         <!-- donation Section starts here -->
         <section id="donation-section" class="max-w-screen-xl mt-6 mb-14 mx-auto px-2 flex flex-col gap-8">
             <!-- card-1 -->
