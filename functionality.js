@@ -2,35 +2,54 @@
 document.getElementById('blog').addEventListener('click', function () {
     window.location.href = "blog.html";
 })
-function getBalanceById(id) {
-    return Number(document.getElementById(id).innerText);
+function getBalanceByElement(element) {
+    return Number(element.innerText);
 }
-function getValueByInputElement(element) {
-    return element.value;
-}
+
 // global variables
-let totalBalance = getBalanceById("balance");
-let noakhaliBalancec = getBalanceById("noakhali-balance");
-let feniBalancec = getBalanceById("feni-balance");
-let quotaBalancec = getBalanceById("quota-balance");
-
-
+let totalBalance = Number(document.getElementById("balance").innerText);
+// nodeLists
+let allEachBalance = document.querySelectorAll(".each-balance");
 let donationCards = document.querySelectorAll(".donation-card");
 let donationInputs = document.querySelectorAll(".donate-input");
 let donationBtns = document.querySelectorAll(".donate-btn");
 
+// set history
+
+function setHistory(donatedAmount,donatedTo, time) {
+    let html = `
+    <div class="border rounded-xl mb-6 p-6">
+                <h1 class="font-semibold text-xl mb-3 text-donate-primary lg:text-start">${donatedAmount} Taka is Donated ${donatedTo}</h1>
+                <p class="font-light text-base mb-6 text-donate-secondary">
+                Date : ${time}
+                </p>
+            </div>
+    `
+    document.getElementById("history-section").innerHTML += html;
+}
+
 // donation functionality
 function donate(evt, idx) {
-    
-    // const donateBtn = document.querySelector()
     if (evt.target === donationBtns[idx]) {
         let inputBalance = Number(donationInputs[idx].value);
-        console.log(inputBalance);
-        if(!isNaN(inputBalance))
-        {
-            console.log("Donation Successful");
+        if (!isNaN(inputBalance)) {
+            if (inputBalance <= 0 || inputBalance > totalBalance) {
+                alert("Donation is Failed");
+            }
+            else {
+                let eachBalance = getBalanceByElement(allEachBalance[idx]);
+                eachBalance += inputBalance;
+                allEachBalance[idx].innerText = eachBalance;
+                totalBalance -= inputBalance;
+                document.getElementById("balance").innerText = totalBalance;
+                let donatedTo = donationCards[idx].querySelector(".donated-to").innerText;
+                let time = new Date();
+                console.log("time : ", time);
+                setHistory(inputBalance,donatedTo, time);
+                console.log("Donation Successful");
+            }
         }
-        else{
+        else {
             alert("Donation is Failed");
         }
     }
@@ -38,6 +57,7 @@ function donate(evt, idx) {
 }
 
 for (let i = 0; i < donationCards.length; i++) {
+    // console.log(i,donationCards[i]);
     donationCards[i].addEventListener('click', function (evt) {
         donate(evt, i);
     })
