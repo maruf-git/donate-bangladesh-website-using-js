@@ -25,6 +25,7 @@ function isDonationSuccessful(inputBalance) {
 
 // set history
 function setHistory(donatedAmount, donatedTo, time) {
+    document.getElementById("no-history").classList.add("hidden");
     let html = `
     <div class="border rounded-xl mb-6 p-6">
                 <h1 class="font-semibold text-xl mb-3 text-donate-primary lg:text-start">${donatedAmount} Taka is Donated ${donatedTo}</h1>
@@ -86,7 +87,8 @@ function changeDonationHistoryStyle(str1, str2) {
     // currently clicked button 
     document.getElementById(str1).classList.remove("bg-white");
     document.getElementById(str1).classList.add("bg-btn-color");
-    document.getElementById(str1).addEventListener("mouseover",function(){
+    // hover issue
+    document.getElementById(str1).addEventListener("mouseover", function () {
         document.getElementById(str1).classList.add("bg-btn-color");
     })
     // currently non-clicked button 
