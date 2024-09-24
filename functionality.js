@@ -87,22 +87,7 @@ function changeDonationHistoryStyle(str1, str2) {
     // // currently clicked button 
     document.getElementById(str1).classList.remove("bg-white");
     document.getElementById(str1).classList.add("bg-btn-color");
-    
-    // hover issue
-    // document.getElementById(str2).addEventListener("mouseover", function () {
-    //     document.getElementById(str1).classList.add("bg-btn-color");
-    //     console.log("brooooooo");
-    // })
-    // document.getElementById(str1).addEventListener("mouseout", function () {
-    //     document.getElementById(str1).classList.add("bg-red-400");
-    //     console.log("brooooooo");
-    // })
-    // document.getElementById(str1).addEventListener("mouseout", function () {
-    //     document.getElementById(str1).classList.add("bg-red-400");
-    //     console.log("brooooooo");
-    // })
-    
-
+    document.getElementById(str1).classList.add("hover:bg-btn-color");
     // currently non-clicked button 
     document.getElementById(str2).classList.remove("bg-btn-color");
     document.getElementById(str2).classList.add("bg-white");
