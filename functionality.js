@@ -25,7 +25,6 @@ function isDonationSuccessful(inputBalance) {
 
 // set history
 function setHistory(donatedAmount, donatedTo, time) {
-    document.getElementById("no-history").classList.add("hidden");
     let html = `
     <div class="border rounded-xl mb-6 p-6">
                 <h1 class="font-semibold text-xl mb-3 text-donate-primary lg:text-start">${donatedAmount} Taka is Donated ${donatedTo}</h1>
@@ -52,28 +51,23 @@ function donate(evt, idx) {
                 document.getElementById("balance").innerText = totalBalance;
                 let donatedTo = donationCards[idx].querySelector(".donated-to").innerText;
                 let time = new Date();
-                // console.log("time : ", time);
                 setHistory(inputBalance, donatedTo, time);
-                // console.log("Donation Successful");
                 // calling modal from daisyUI
                 my_modal_5.showModal();
             } else {
-                alert("Donation is Failed 3");
+                alert("Invalid Donation Amount");
             }
 
         }
         else {
-            alert("Donation is Failed 2");
+            alert("Invalid Donation Amount");
         }
         donationInputs[idx].value = "";
     }
 
 }
 
-
-
 for (let i = 0; i < donationCards.length; i++) {
-    // console.log(i,donationCards[i]);
     donationCards[i].addEventListener('click', function (evt) {
         donate(evt, i);
     })
@@ -81,7 +75,7 @@ for (let i = 0; i < donationCards.length; i++) {
 
 
 
-// donation and history toggle functionality
+// donation and history toggle functionality starts
 let donationActive = true; // true means donation is now active button, false means history in now active btn
 function changeDonationHistoryStyle(str1, str2) {
     // // currently clicked button 
@@ -92,7 +86,6 @@ function changeDonationHistoryStyle(str1, str2) {
     document.getElementById(str2).classList.remove("bg-btn-color");
     document.getElementById(str2).classList.add("bg-white");
    
-
     let donationSection = document.getElementById("donation-section");
     let historySection = document.getElementById("history-section");
     // now active btn
@@ -104,8 +97,6 @@ function changeDonationHistoryStyle(str1, str2) {
         donationSection.classList.add("flex");
         historySection.classList.remove('grid'); //flex
         historySection.classList.add('hidden');
-        // donationSection.classList.add("hidden bg-green-400");
-        // donationSection.classList.remove("flex");
     }
     else {
         console.log('see history');
@@ -114,8 +105,6 @@ function changeDonationHistoryStyle(str1, str2) {
         historySection.classList.add("grid"); // flex
         donationSection.classList.remove('flex');
         donationSection.classList.add('hidden');
-        // historySection.classList.add("hidden bg-green-400");
-        // historySection.classList.remove("flex");
     }
 }
 function donationHistoryToggle(e) {
@@ -132,6 +121,7 @@ function donationHistoryToggle(e) {
         }
     }
 }
+
 document.getElementById("donation").addEventListener('click', function (e) {
     donationHistoryToggle(e);
 });
