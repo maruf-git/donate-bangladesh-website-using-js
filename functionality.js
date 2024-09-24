@@ -17,7 +17,6 @@ let donationInputs = document.querySelectorAll(".donate-input");
 let donationBtns = document.querySelectorAll(".donate-btn");
 
 // Check Donation Status
-
 function isDonationSuccessful(inputBalance) {
     if (inputBalance <= 0 || inputBalance > totalBalance) {
         return false;
