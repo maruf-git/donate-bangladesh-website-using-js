@@ -2,6 +2,8 @@
 document.getElementById('blog').addEventListener('click', function () {
     window.location.href = "blog.html";
 })
+
+
 function getBalanceByElement(element) {
     return Number(element.innerText);
 }
@@ -85,6 +87,7 @@ function changeDonationHistoryStyle(str1, str2) {
     // currently non-clicked button 
     document.getElementById(str2).classList.remove("bg-btn-color");
     document.getElementById(str2).classList.add("bg-white");
+    document.getElementById(str2).classList.remove("hover:bg-btn-color");
    
     let donationSection = document.getElementById("donation-section");
     let historySection = document.getElementById("history-section");

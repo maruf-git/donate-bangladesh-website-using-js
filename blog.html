@@ -1,1 +1,208 @@
-<h1>Hello</h1>
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog || Donate Bangladesh</title>
+    <!-- google fonts cdn -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <!-- fontawesome cdn -->
+    <script src="https://kit.fontawesome.com/ba08c8e2bb.js" crossorigin="anonymous"></script>
+    <!-- daisyUI cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <!-- tailwind css cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        'btn-color': '#B4F461', //green
+                        'donate-primary': '#111111', //dark
+                        'donate-secondary': 'rgba(17, 17, 17, 0.7)', //light-dark .7
+                    },
+                    fontFamily: {
+                        'lexend': ["Lexend", 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-lexend">
+    <!-- header section starts here -->
+    <header id="header" class="  text-donate-primary text-xl sticky top-0  backdrop-blur-lg z-20">
+        <!-- navar section starts here  -->
+        <section class="bg-[rgba(255,216,53,.7)] ">
+            <section
+                class="flex flex-col justify-center  items-center lg:gap-3 md:flex-row  md:justify-between max-w-screen-xl m-auto  pt-4 pb-5 sm:pb-8 ">
+                <div class=" ">
+                    <button id="home" class="btn text-xl font-semibold bg-btn-color border-none">Home</button>
+                </div>
+                <div class=" flex justify-center items-center gap-3">
+                    <img src="assets/logo.png" alt="">
+                    <h1 class="font-semibold">Donate Bangladesh</h1>
+                </div>
+                <div class=" flex  items-center gap-3">
+                    <img src="assets/coin.png" alt="">
+                    <h1 class="font-semibold  text-donate-secondary"><span id="balance">5500</span> BDT</h1>
+                </div>
+            </section>
+        </section>
+        <!-- navbar section ends here -->
+    </header>
+    <!-- header section ends here -->
+
+    <!-- main section starts here -->
+    <main class="max-w-screen-xl mx-auto">
+        <!-- important faq section -->
+        <section class="max-w-screen-xl mt-6 mb-14  px-2 flex flex-col gap-8">
+            <!-- faq title -->
+            <div>
+                <h1 class="font-bold text-4xl">Important FAQ <i class="fa-solid fa-question"></i></h1>
+            </div>
+            <!-- faq question and answer -->
+            <div>
+                <div class="collapse collapse-plus bg-base-200 z-0">
+                    <input type="radio" name="my-accordion-3" checked="checked" />
+                    <div class="collapse-title text-xl font-medium">What is Document Object Model (DOM) ?</div>
+                    <div class="collapse-content">
+                        <!-- <p>hello</p> -->
+                        <div>
+                            <p>
+                                The <span class="font-bold">Document Object Model (DOM)</span> is a way for web browsers
+                                to
+                                represent a webpage so that
+                                programming languages like JavaScript can interact with it. The DOM represents the HTML
+                                document as a tree. Each node in the tree is an object corresponding to a part of the
+                                document, such as elements (div tag, p tag, etc.), attributes, and text.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="collapse collapse-plus bg-base-200">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title text-xl font-medium">How do you can select an element from the DOM ?
+                    </div>
+                    <div class="collapse-content">
+                        <div>
+                            <p>
+                                To select an element from the DOM using JavaScript, there are several methods. These
+                                methods allow us to find
+                                and interact with specific parts of the webpage.
+                                <br>
+                                <span class="font-semibold">Here are the most common ways:</span>
+                                <br>
+
+                                <span class="font-semibold">1. getElementById("id")</span><br>
+                                This method selects an element by its unique id attribute.
+                                <br>
+                                <span class="font-semibold">2. getElementsByClassName("class")</span><br>
+                                This method selects all elements that share a certain class. It returns a collection
+                                (like an array).
+                                <br>
+                                <span class="font-semibold">3. getElementsByTagName("tag")</span><br>
+                                This method selects all elements by their tag name (like div, p, h1, etc.).
+                                <br>
+                                <span class="font-semibold">4. querySelector("selector")</span><br>
+                                This method selects the first element that matches a CSS-style selector. You can use id,
+                                class, or element tags.
+                                <br>
+                                <span class="font-semibold">5. querySelectorAll("selector")</span><br>
+                                This method selects all elements that match a CSS-style selector. It returns a list of
+                                all matching elements.
+                                <br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="collapse collapse-plus bg-base-200">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title text-xl font-medium">What is event delegation in the context of the DOM,
+                        and why is it useful ?</div>
+                    <div class="collapse-content">
+                        <div>
+                            <p>
+                                <span class="font-semibold">Event delegation</span> is a technique in the DOM where a
+                                single event listener is attached to
+                                a parent element to
+                                handle events from its child elements. Instead of adding individual event listeners to
+                                each child, you add one
+                                listener to a common ancestor and take advantage of event bubbling (where an event
+                                propagates up the DOM tree).
+                                <br>
+                                Event Delegation is a useful pattern that allows us to write cleaner code, and create
+                                fewer event listeners with similar logic.With event delegation, we create fewer event
+                                listeners and perform similar events-based logic in one place. This makes it easier for
+                                us to add and remove elements without having to add new or remove existing event
+                                listeners.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="collapse collapse-plus bg-base-200">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title text-xl font-medium">How do you manipulate an element's attribute and
+                        styles using the DOM ?</div>
+                    <div class="collapse-content">
+                        <div>
+                            <p>
+                                <span class="font-semibold">1. Manipulating Attributes: </span><br>
+                                We can use JavaScript to get, set, or remove attributes of an HTML element.
+                                <br>
+
+                                <span class="font-semibold">a. Getting an Attribute:</span>
+                                To get the value of an attribute, use the getAttribute()
+                                <br>
+
+                                <span class="font-semibold">b. Setting an Attribute:</span>
+                                To change or add an attribute, use the setAttribute() method:
+                                <br>
+
+                                <span class="font-semibold">c. Removing an Attribute:</span>
+                                To remove an attribute, use the removeAttribute() method:
+                                <br>
+
+                                <br>
+
+                                <span class="font-semibold">2. Manipulating Styles: </span><br>
+                                We can change an element's CSS styles directly using the style property.
+                                <br>
+
+                                <span class="font-semibold">a. Setting Inline Styles:</span>
+                                we can set specific CSS properties using JavaScript:
+                                <br>
+                                const element = document.getElementById("myElement");<br>
+                                element.style.color = "red"; // Changes the text color to red
+                                <br>
+                                <span class="font-semibold">b. Removing Inline Styles:</span>
+                                To remove a style, set the property back to an empty string:
+                                <br>
+                                const element = document.getElementById("myElement");<br>
+                                element.style.color = "";  // Removes the inline color style
+                                <br>
+                                <span class="font-semibold">c. Adding Multiple Styles at Once:</span>
+                                We can also use element.style.cssText to set multiple styles at once:
+                                <br>
+                                element.style.cssText = "color: green; background-color: yellow; font-size: 18px;";
+                                <br>
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- main section ends here -->
+
+    <!-- js for blog.html -->
+    <script src="blog.js"></script>
+</body>
+
+</html>
